@@ -1,0 +1,57 @@
+.App {
+  text-align: center;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+h3{
+  color:gray;
+  padding-left: 35px;
+}
+.inpt{
+  border:none;
+  border-bottom: 1px lightblue solid;
+}
+.inptRaiting{
+  margin-top: 5px;
+  width: 55px;
+  border:  1px solid lightblue;
+  color: gray;
+
+}
+.btn{
+  margin-top: 10px;
+  padding: 3px;
+  border: none;
+  background-color: lightblue;
+  color: gray;
+}
+li{
+  list-style-type: none;
+  color: gray;
+  padding-top: 8px;
+  
+}
+i{
+  color: lightblue;
+ 
+}
+p{
+  display: inline-block;
+}
