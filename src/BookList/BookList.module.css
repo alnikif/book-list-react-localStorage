@@ -1,0 +1,26 @@
+.btn{
+    margin-top: 10px;
+    padding: 3px;
+    border: none;
+    background-color: lightblue;
+    color: gray;
+  }
+  .header{
+    color:gray;
+    padding-left: 35px;
+  }
+  .inpt{
+    border:none;
+    border-bottom: 1px lightblue solid;
+  }
+  
+.listItem{
+    list-style-type: none;
+    color: gray;
+    padding-top: 8px;
+    
+  }
+  .star{
+    color: lightblue;
+   
+  }

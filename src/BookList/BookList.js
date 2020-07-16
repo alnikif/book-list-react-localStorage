@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+import '../../node_modules/font-awesome/css/font-awesome.min.css'; 
+import styles from './BookList.module.css';
 
 //<i className="fa fa-star" aria-hidden={true}></i> black
 //<i className="fa fa-star-half" aria-hidden={true}></i> 50%
@@ -80,7 +81,7 @@ class BookList extends Component {
                 
                  <form action="">
                      
-                    <input className='inpt' type="text" placeholder='Autor' onChange={this.handleChangeAutor} value={this.state.autor}/><br/>
+                    <input className={styles.inpt} type="text" placeholder='Autor' onChange={this.handleChangeAutor} value={this.state.autor}/><br/>
                     <input className='inpt' type="text" placeholder='Książka' onChange={this.handleChangeBook} value={this.state.book}/><br/>
                     <select name="raiting" id="select" onChange={this.handleChangeRaiting} value={this.state.raiting}>
                         {Array.from({length:6}, (v,i)=>i).map((el,i)=>{
@@ -91,9 +92,9 @@ class BookList extends Component {
                     <input className='btn' type="submit" value='Dodaj' onClick={this.handleClick}/>
                 </form>
                 <div className='list'>
-                    {this.state.books.length?<h3>Lista ulubionych książek</h3>: null} 
+                    {this.state.books.length?<h3 className={styles.header}>Lista ulubionych książek</h3>: null} 
                     <ul>
-                        {this.state.books.map((el,i)=><li key={i}> book {el.book}, autor {el.autor} raiting {calculateStars(el.raiting)}   <i className="fa fa-window-close" aria-hidden={true} onClick={e=>this.handleRemoveClick(el)}></i> </li>)}
+                        {this.state.books.map((el,i)=><li className={styles.listItem} key={i}> book {el.book}, autor {el.autor} raiting {calculateStars(el.raiting)}   <i className={styles.star} className="fa fa-window-close" aria-hidden={true} onClick={e=>this.handleRemoveClick(el)}></i> </li>)}
                     </ul>
                 </div>
             </div>
