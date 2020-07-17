@@ -1,3 +1,11 @@
+.container{
+  border: 0.5px solid lightblue;
+  width: 450px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 70px;
+  padding: 10px;
+}
 .btn{
     margin-top: 10px;
     padding: 3px;
@@ -11,7 +19,8 @@
   }
   .inpt{
     border:none;
-    border-bottom: 1px lightblue solid;
+    border-bottom: 0.5px lightblue solid;
+    width: 300px;
   }
   
 .listItem{

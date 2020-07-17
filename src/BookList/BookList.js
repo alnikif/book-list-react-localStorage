@@ -77,12 +77,12 @@ class BookList extends Component {
         return <span> {fullStars} {emptyStars}</span> ;
         }
         return (
-            <div className='container'>
+            <div className={styles.container}>
                 
                  <form action="">
                      
                     <input className={styles.inpt} type="text" placeholder='Autor' onChange={this.handleChangeAutor} value={this.state.autor}/><br/>
-                    <input className='inpt' type="text" placeholder='Książka' onChange={this.handleChangeBook} value={this.state.book}/><br/>
+                    <input className={styles.inpt} type="text" placeholder='Książka' onChange={this.handleChangeBook} value={this.state.book}/><br/>
                     <select name="raiting" id="select" onChange={this.handleChangeRaiting} value={this.state.raiting}>
                         {Array.from({length:6}, (v,i)=>i).map((el,i)=>{
                             return <option value={el} key={i}>{el}</option>
@@ -94,7 +94,7 @@ class BookList extends Component {
                 <div className='list'>
                     {this.state.books.length?<h3 className={styles.header}>Lista ulubionych książek</h3>: null} 
                     <ul>
-                        {this.state.books.map((el,i)=><li className={styles.listItem} key={i}> book {el.book}, autor {el.autor} raiting {calculateStars(el.raiting)}   <i className={styles.star} className="fa fa-window-close" aria-hidden={true} onClick={e=>this.handleRemoveClick(el)}></i> </li>)}
+                        {this.state.books.map((el,i)=><li className={styles.listItem} key={i}>{i+1} {el.book}, {el.autor} raiting {calculateStars(el.raiting)}   <i className={styles.star} className="fa fa-window-close" aria-hidden={true} onClick={e=>this.handleRemoveClick(el)}></i> </li>)}
                     </ul>
                 </div>
             </div>
