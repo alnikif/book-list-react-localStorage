@@ -94,7 +94,7 @@ class BookList extends Component {
                 <div className='list'>
                     {this.state.books.length?<h3 className={styles.header}>Lista ulubionych książek</h3>: null} 
                     <ul>
-                        {this.state.books.map((el,i)=><li className={styles.listItem} key={i}>{i+1} {el.book}, {el.autor} raiting {calculateStars(el.raiting)}   <i className={styles.star} className="fa fa-window-close" aria-hidden={true} onClick={e=>this.handleRemoveClick(el)}></i> </li>)}
+                        {this.state.books.map((el,i)=><li className={styles.listItem} key={i}>{i+1} {el.book}, {el.autor} {calculateStars(el.raiting)}   <i className={styles.star} className="fa fa-window-close" aria-hidden={true} onClick={e=>this.handleRemoveClick(el)}></i> </li>)}
                     </ul>
                 </div>
             </div>
