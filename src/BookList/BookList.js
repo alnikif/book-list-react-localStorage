@@ -74,30 +74,32 @@ class BookList extends Component {
             const emptyStars = Array.from({length: 5 - raiting}, (v, i)=>i).map((el, i)=>{
                 return <i className="fa fa-star-o" key={i} aria-hidden={true}></i>
             })
-        return <span> {fullStars} {emptyStars}</span> ;
+        return <span className={styles.star}> {fullStars} {emptyStars}</span> ;
         }
         return (
-            <div className={styles.container}>
-                
-                 <form action="">
-                     
-                    <input className={styles.inpt} type="text" placeholder='Autor' onChange={this.handleChangeAutor} value={this.state.autor}/><br/>
-                    <input className={styles.inpt} type="text" placeholder='Książka' onChange={this.handleChangeBook} value={this.state.book}/><br/>
-                    <select name="raiting" id="select" onChange={this.handleChangeRaiting} value={this.state.raiting}>
-                        {Array.from({length:6}, (v,i)=>i).map((el,i)=>{
-                            return <option value={el} key={i}>{el}</option>
-                        })}
-                    </select>
-                    {/* <input className='inptRaiting' placeholder='raiting' type="number" max={5} onChange={this.handleChangeRaiting} value={this.state.raiting}/><br/> */}
-                    <input className='btn' type="submit" value='Dodaj' onClick={this.handleClick}/>
-                </form>
-                <div className='list'>
-                    {this.state.books.length?<h3 className={styles.header}>Lista ulubionych książek</h3>: null} 
-                    <ul>
-                        {this.state.books.map((el,i)=><li className={styles.listItem} key={i}>{i+1} {el.book}, {el.autor} {calculateStars(el.raiting)}   <i className={styles.star} className="fa fa-window-close" aria-hidden={true} onClick={e=>this.handleRemoveClick(el)}></i> </li>)}
-                    </ul>
+            <>
+                <div className={styles.container}>
+                    
+                    <form action="">
+                        
+                        <input className={styles.inpt} type="text" placeholder='Autor' onChange={this.handleChangeAutor} value={this.state.autor}/><br/>
+                        <input className={styles.inpt} type="text" placeholder='Książka' onChange={this.handleChangeBook} value={this.state.book}/><br/>
+                        <p className={styles.pRaiting}>Raiting</p>
+                        <select className={styles.select} name="raiting" id="select" onChange={this.handleChangeRaiting} value={this.state.raiting}>
+                            {Array.from({length:6}, (v,i)=>i).map((el,i)=>{
+                                return <option value={el} key={i}>{el}</option>
+                            })}
+                        </select><br/>
+                        <input className={styles.btn} type="submit" value='Dodaj' onClick={this.handleClick}/>
+                    </form>
                 </div>
+                <div className={styles.list}>
+                {this.state.books.length?<h3 className={styles.header}>Lista ulubionych książek</h3>: null} 
+                <ul>
+                    {this.state.books.map((el,i)=><li className={styles.listItem} key={i}>{i+1}. {el.book}, {el.autor} {calculateStars(el.raiting)}  <span className={styles.close}> <i  className="fa fa-window-close" aria-hidden={true} onClick={e=>this.handleRemoveClick(el)}></i></span> </li>)}
+                </ul>
             </div>
+        </>
         )
     }
 }

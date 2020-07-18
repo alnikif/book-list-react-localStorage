@@ -1,35 +1,56 @@
 .container{
-  border: 0.5px solid lightblue;
+  border:none;
+  height: 200px;
   width: 450px;
   text-align: center;
   margin: 0 auto;
   margin-top: 70px;
   padding: 10px;
+  background: #f0f0f0
+
 }
 .btn{
-    margin-top: 10px;
-    padding: 3px;
-    border: none;
-    background-color: lightblue;
-    color: gray;
-  }
+  background-color: #00C5BE;
+  border: none;
+  color: #fff;
+  font-size: 0.6em;
+  padding: 10px 40px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.select{
+  margin-bottom: 6px;
+}
+
   .header{
     color:gray;
-    padding-left: 35px;
   }
   .inpt{
-    border:none;
-    border-bottom: 0.5px lightblue solid;
+    border: none;
+    color: #aaa;
+    margin-top: 10px;
+    display: inline-block;
     width: 300px;
+    height: 30px;
+    padding-left: 10px;
   }
-  
-.listItem{
+  .list{
+    text-align: center;
+  }
+  .listItem{
     list-style-type: none;
     color: gray;
     padding-top: 8px;
-    
+
   }
   .star{
-    color: lightblue;
-   
+    color: #00C5BE;
+
+  }
+  .close{
+    color:#aaa;
+  }
+  .pRaiting{
+    margin: 6px;
+    color: gray;
   }
