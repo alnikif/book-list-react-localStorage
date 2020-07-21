@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import '../../node_modules/font-awesome/css/font-awesome.min.css'; 
 import styles from './BookList.module.css';
 
-//<i className="fa fa-star" aria-hidden={true}></i> black
-//<i className="fa fa-star-half" aria-hidden={true}></i> 50%
-//<i className="fa fa-star-o" aria-hidden={true}></i> white
-
-
-
 
 class BookList extends Component {
     constructor(props){
@@ -45,9 +39,6 @@ class BookList extends Component {
         
     }
     handleChangeRaiting=e=>{
-
-        // let isValid=e.target.value<6 && e.target.value>=0;
-        // let validNumber=isValid ? e.target.value : 0;
          this.setState({
             raiting:e.target.value
         })
@@ -94,10 +85,10 @@ class BookList extends Component {
                     </form>
                 </div>
                 <div className={styles.list}>
-                {this.state.books.length?<h3 className={styles.header}>Lista ulubionych książek</h3>: null} 
-                <ul>
-                    {this.state.books.map((el,i)=><li className={styles.listItem} key={i}>{i+1}. {el.book}, {el.autor} {calculateStars(el.raiting)}  <span className={styles.close}> <i  className="fa fa-window-close" aria-hidden={true} onClick={e=>this.handleRemoveClick(el)}></i></span> </li>)}
-                </ul>
+                    {this.state.books.length?<h3 className={styles.header}>Lista ulubionych książek</h3>: null} 
+                    <ul>
+                        {this.state.books.map((el,i)=><li className={styles.listItem} key={i}>{i+1}. {el.book}, {el.autor} {calculateStars(el.raiting)}  <span className={styles.close}> <i  className="fa fa-window-close" aria-hidden={true} onClick={e=>this.handleRemoveClick(el)}></i></span> </li>)}
+                    </ul>
             </div>
         </>
         )
